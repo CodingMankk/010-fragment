@@ -6,6 +6,8 @@
     android:background="#00fff0">
 
 
+
+
     <TextView
         android:id="@+id/tv_fragment1"
         android:layout_width="match_parent"

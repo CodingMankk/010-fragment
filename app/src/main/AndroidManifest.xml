@@ -9,6 +9,7 @@
     <!--<activity android:name=".fragmentargsmethod1demo6.SixActivity">-->
     <!--<activity android:name=".fragmentargsmethod2demo7.SevenActivity">-->
     <!--<activity android:name=".fragmentargsmethod3demo8.EightActivity">-->
+    <!--<activity android:name=".fragmenbacklistenerdemo9.NineActivity">-->
 
     <application
         android:allowBackup="true"
@@ -17,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragmenbacklistenerdemo9.NineActivity">
+        <activity android:name=".fragmentreplacedatasavedemo10.TenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
