@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_add_fragment1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Add fg1"/>
+
+        <Button
+            android:id="@+id/btn_add_fragment2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Add fg2"/>
+
+        <Button
+            android:id="@+id/btn_add_fragment3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Add fg3"/>
+
+        <Button
+            android:id="@+id/btn_add_fragment4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Add fg4"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_add_fragment234"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add_fragment234"/>
+
+    <Button
+        android:id="@+id/btn_pop_stack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pop_stack"/>
+
+    <Button
+        android:id="@+id/btn_back_to_fragment2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="backTofg2_0"/>
+
+    <Button
+        android:id="@+id/btn_back_to_fragment2_inclusive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="backTofg2_inclusive"/>
+
+
+
+    <FrameLayout
+        android:id="@+id/fl_frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+    </FrameLayout>
+
+
+</LinearLayout>
