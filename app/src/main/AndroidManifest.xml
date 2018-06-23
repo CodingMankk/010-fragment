@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.oztaking.www.fragmentpack">
-    <!--<activity android:name=".fragmentstaticdemo1.SixActivity">-->
+    <!--<activity android:name=".fragmentstaticdemo1.SevenActivity">-->
     <!--<activity android:name=".fragmentdynamicdemo2.SecondActivity">-->
     <!--<activity android:name=".fragmentmethoddemo3.ThirdActivity">-->
     <!--<activity android:name=".fragmentbacktostackdemo4.FourActivity">-->
     <!--<activity android:name=".fragmenthideshowdemo5.FifthActivity">-->
+    <!--<activity android:name=".fragmentargsmethod1demo6.SixActivity">-->
 
     <application
         android:allowBackup="true"
@@ -14,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragmentargsmethod1demo6.SixActivity">
+        <activity android:name=".fragmentargsmethod2demo7.SevenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
