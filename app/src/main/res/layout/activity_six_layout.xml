@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.oztaking.www.fragmentpack.fragmentstaticdemo1.MainActivity">
+
+    <fragment
+        android:id="@+id/fg6_1"
+        android:name="com.oztaking.www.fragmentpack.fragmentargsmethod1demo6.Fragment6_1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <fragment
+        android:id="@+id/fg6_2"
+        android:name="com.oztaking.www.fragmentpack.fragmentargsmethod1demo6.Fragment6_2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>

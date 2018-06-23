@@ -14,11 +14,11 @@ import android.widget.Toast;
 import com.oztaking.www.fragmentpack.R;
 
 /**
- * @function: 动态添加fragment；
+ * @function: backToStack的认识
  */
 
 //class继承与FragmentActivity
-public class FourActivity extends FragmentActivity implements View.OnClickListener{
+public class FourActivity extends FragmentActivity implements View.OnClickListener {
 
     private Button mBtnAddFragment1;
     private Button mBtnAddFragment2;
@@ -31,7 +31,7 @@ public class FourActivity extends FragmentActivity implements View.OnClickListen
 
     private Button mBtnPopStack;
 
-    int mFragmentId1, mFragmentId2,mFragmentId3,mFragmentId4;
+    int mFragmentId1, mFragmentId2, mFragmentId3, mFragmentId4;
     private FragmentManager.OnBackStackChangedListener mListener;
 
 
@@ -57,13 +57,13 @@ public class FourActivity extends FragmentActivity implements View.OnClickListen
     private void initView() {
         mBtnAddFragment1 = (Button) findViewById(R.id.btn_add_fragment1);
         mBtnAddFragment2 = (Button) findViewById(R.id.btn_add_fragment2);
-        mBtnAddFragment3 = (Button)findViewById(R.id.btn_add_fragment3);
-        mBtnAddFragment4 = (Button)findViewById(R.id.btn_add_fragment4);
-        mBtnAddFragment234 = (Button)findViewById(R.id.btn_add_fragment234);
+        mBtnAddFragment3 = (Button) findViewById(R.id.btn_add_fragment3);
+        mBtnAddFragment4 = (Button) findViewById(R.id.btn_add_fragment4);
+        mBtnAddFragment234 = (Button) findViewById(R.id.btn_add_fragment234);
 
-        mBtnPopStack = (Button)findViewById(R.id.btn_pop_stack);
-        mBtnBackToFragment2 = (Button)findViewById(R.id.btn_back_to_fragment2);
-        mBtnBackToFragment2Inclusive = (Button)findViewById(R.id.btn_back_to_fragment2_inclusive);
+        mBtnPopStack = (Button) findViewById(R.id.btn_pop_stack);
+        mBtnBackToFragment2 = (Button) findViewById(R.id.btn_back_to_fragment2);
+        mBtnBackToFragment2Inclusive = (Button) findViewById(R.id.btn_back_to_fragment2_inclusive);
 
         mBtnAddFragment1.setOnClickListener(this);
         mBtnAddFragment2.setOnClickListener(this);
@@ -80,72 +80,71 @@ public class FourActivity extends FragmentActivity implements View.OnClickListen
     }
 
 
-
-
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
-             case R.id.btn_add_fragment1:
-                 mFragmentId1 = addFragment(R.id.fl_frameLayout, new Fragment1(), "fragment1");
-                 break;
+        switch (v.getId()) {
+            case R.id.btn_add_fragment1:
+                mFragmentId1 = addFragment(R.id.fl_frameLayout, new Fragment1(), "fragment1");
+                break;
             case R.id.btn_add_fragment2:
-                mFragmentId2 =  addFragment(R.id.fl_frameLayout,new Fragment2(),"fragment2");
+                mFragmentId2 = addFragment(R.id.fl_frameLayout, new Fragment2(), "fragment2");
                 break;
 
             case R.id.btn_add_fragment3:
-                mFragmentId3 = addFragment(R.id.fl_frameLayout,new Fragment3(),"fragment3");
+                mFragmentId3 = addFragment(R.id.fl_frameLayout, new Fragment3(), "fragment3");
                 break;
 
             case R.id.btn_add_fragment4:
-                mFragmentId4 = addFragment(R.id.fl_frameLayout,new Fragment4(),"fragment4");
+                mFragmentId4 = addFragment(R.id.fl_frameLayout, new Fragment4(), "fragment4");
                 break;
 
             case R.id.btn_add_fragment234:
-                addMultiFragment(R.id.fl_frameLayout,new Fragment2(),new Fragment3(),new Fragment4(),
-                        "fragment2","fragment3","fragment4");
-               break;
+                addMultiFragment(R.id.fl_frameLayout, new Fragment2(), new Fragment3(), new
+                                Fragment4(),
+                        "fragment2", "fragment3", "fragment4");
+                break;
 
             case R.id.btn_pop_stack:
                 popStack();
                 break;
             case R.id.btn_back_to_fragment2:
-//                backStackToFragmentByTag("fragment2",0);
-                backStackToFragmentById(mFragmentId2,0);
+                //                backStackToFragmentByTag("fragment2",0);
+                backStackToFragmentById(mFragmentId2, 0);
                 break;
 
             case R.id.btn_back_to_fragment2_inclusive:
-                backStackToFragmentByTag("fragment2",FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                backStackToFragmentById(mFragmentId2,FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                backStackToFragmentByTag("fragment2", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                backStackToFragmentById(mFragmentId2, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 break;
 
-             default:
-                  break;
+            default:
+                break;
         }
     }
 
 
     /**
-     *
      * @param containor
      * @param fragment
-     * @param tag: 与fragment进行关联，在findFragment时候使用；
+     * @param tag:      与fragment进行关联，在findFragment时候使用；
      */
-    private int addFragment(int containor, Fragment fragment, String tag){
+    private int addFragment(int containor, Fragment fragment, String tag) {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction tr = fm.beginTransaction();
-        tr.add(containor,fragment,tag);
+        tr.add(containor, fragment, tag);
         tr.addToBackStack(tag);//将fragment添加到返回stack中；
         int id = tr.commit(); //生成tr的id；
         return id;
     }
 
-    private void addMultiFragment(int containor, Fragment fragment1,Fragment fragment2,Fragment fragment3,
-                                 String tag1,String tag2,String tag3){
+    private void addMultiFragment(int containor, Fragment fragment1, Fragment fragment2, Fragment
+            fragment3,
+                                  String tag1, String tag2, String tag3) {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction tr = fm.beginTransaction();
-        tr.add(containor,fragment1,tag1);
-        tr.add(containor,fragment2,tag2);
-        tr.add(containor,fragment3,tag3);
+        tr.add(containor, fragment1, tag1);
+        tr.add(containor, fragment2, tag2);
+        tr.add(containor, fragment3, tag3);
 
         tr.addToBackStack(tag1);//将fragment添加到返回stack中；
         tr.addToBackStack(tag2);//将fragment添加到返回stack中；
@@ -155,21 +154,21 @@ public class FourActivity extends FragmentActivity implements View.OnClickListen
 
     }
 
-    private void popStack(){
+    private void popStack() {
         FragmentManager fm = getFragmentManager();
         fm.popBackStack();
     }
 
     //此处是通过tag返回；也同样可以通过Tr.add时生成的id返回
-    private void backStackToFragmentByTag(String tag,int flag){
+    private void backStackToFragmentByTag(String tag, int flag) {
         FragmentManager fm = getFragmentManager();
-        fm.popBackStack(tag,flag);
+        fm.popBackStack(tag, flag);
     }
 
     //此处是通过tag返回；也同样可以通过Tr.add时生成的id返回
-    private void backStackToFragmentById(int id,int flag){
+    private void backStackToFragmentById(int id, int flag) {
         FragmentManager fm = getFragmentManager();
-        fm.popBackStack(id,flag);
+        fm.popBackStack(id, flag);
     }
 
     @Override
